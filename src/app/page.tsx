@@ -1,5 +1,5 @@
-import Image from "next/image";
-import logo from "@/aseets/logo.png";
+import Image from 'next/image'
+import logo from '@/aseets/logo.png'
 
 export default function HomePage() {
   return (
@@ -22,5 +22,5 @@ export default function HomePage() {
         </div>
       </div>
     </>
-  );
+  )
 }
