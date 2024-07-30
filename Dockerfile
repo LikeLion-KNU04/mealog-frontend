@@ -6,7 +6,7 @@ FROM base AS deps
 RUN apk add --no-cache libc6-compat
 WORKDIR /app
 
-RUN yarn set version stable
+RUN yarn set version 4.1.0
 
 # Install dependencies based on the preferred package manager
 COPY .yarnrc.yml package.json yarn.lock* package-lock.json* pnpm-lock.yaml* ./
