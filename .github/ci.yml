@@ -1,4 +1,4 @@
-name: CI
+name: Test and Build
 
 env:
   DOCKER_IMAGE: ghcr.io/likelion-knu04/mealog-frontend
