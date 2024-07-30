@@ -32,4 +32,4 @@ jobs:
           docker rmi ${{ env.DOCKER_IMAGE }}:latest || true
 
       - name: Run Docker container
-        run: sudo docker run -d -p 3000:3000 --hostname ${{ env.DOCKER_CONTAINER }} --name ${{ env.DOCKER_CONTAINER }} --restart always ${{ env.DOCKER_IMAGE }}:latest
+        run: sudo docker run -d -p 3000:3000 --network web --hostname ${{ env.DOCKER_CONTAINER }} --name ${{ env.DOCKER_CONTAINER }} --restart always ${{ env.DOCKER_IMAGE }}:latest
