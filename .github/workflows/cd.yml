@@ -26,7 +26,10 @@ jobs:
         run: sudo docker pull ${{ env.DOCKER_IMAGE }}:latest
 
       - name: Delete old Docker container and image
-        run: docker stop ${{ env.DOCKER_CONTAINER }} && docker rm -f ${{ env.DOCKER_CONTAINER }} && docker rmi ${{ env.DOCKER_IMAGE }}:latest
+        run: |
+          docker stop ${{ env.DOCKER_CONTAINER }} || true
+          docker rm -f ${{ env.DOCKER_CONTAINER }} || true
+          docker rmi ${{ env.DOCKER_IMAGE }}:latest || true
 
       - name: Run Docker container
         run: sudo docker run -d -p 3000:3000 --hostname ${{ env.DOCKER_CONTAINER }} --name ${{ env.DOCKER_CONTAINER }} --restart always ${{ env.DOCKER_IMAGE }}:latest
