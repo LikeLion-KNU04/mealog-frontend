@@ -28,5 +28,5 @@ body {
     'Segoe UI Symbol',
     sans-serif;
 
-  @apply bg-primary-300;
+  @apply bg-primary-100;
 }
