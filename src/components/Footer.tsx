@@ -1,6 +1,6 @@
 'use client'
 
-import { logoWhite } from '@/app/constants'
+import { logoWhite } from '@/assets'
 import { IconMail, IconPhone } from '@tabler/icons-react'
 import Image from 'next/image'
 import Link from 'next/link'

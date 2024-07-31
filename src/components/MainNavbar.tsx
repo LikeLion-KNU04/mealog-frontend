@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { IconSearch, IconBell } from '@tabler/icons-react'
 import { usePathname } from 'next/navigation'
 import classNames from 'classnames'
-import { logo } from '@/app/constants'
+import { logo } from '@/assets'
 
 export default function MainNavbar() {
   return (
