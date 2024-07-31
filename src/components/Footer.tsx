@@ -1,6 +1,7 @@
 'use client'
 
 import { logoWhite } from '@/assets'
+import links from '@/constants/links'
 import { IconMail, IconPhone } from '@tabler/icons-react'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -13,9 +14,9 @@ export default function Footer() {
           <Image src={logoWhite} alt="logo" height={52} />
         </div>
         <div className="text-sm font-light flex gap-2 pb-4">
-          <span>대구광역시 달서구 XXX로 XXX, 2층</span>
+          <span>멋쟁이사자처럼 대학 12기 중앙해커톤</span>
           <span className="text-white/50">|</span>
-          <span>사업자등록번호: 000-00-00000</span>
+          <span>경북대학교 4팀 크누라이온즈</span>
         </div>
 
         <div className="pb-4 flex flex-col gap-1 text-sm">
@@ -49,11 +50,20 @@ export default function Footer() {
           <div className="pb-2">SERVICES</div>
           <div className="text-sm font-light pb-1">게시판</div>
         </div>
-        <div className="col-span-1 pb-6">
-          <div className="pb-2">POLICIES</div>
-          <div className="text-sm font-light pb-1">개인정보 처리방침</div>
-          <div className="text-sm font-light pb-1">이용약관</div>
-          <div className="text-sm font-light pb-1">법적 고지</div>
+        <div className="col-span-1 flex flex-col pb-6">
+          <div className="pb-2">LINKS</div>
+          <a href={links.github} className="text-sm font-light pb-1">
+            팀 GitHub
+          </a>
+          <a href={links.frontend} className="text-sm font-light pb-1">
+            프론트엔드 리포지토리
+          </a>
+          <a href={links.backend} className="text-sm font-light pb-1">
+            백엔드 리포지토리
+          </a>
+          <a href={links.ai} className="text-sm font-light pb-1">
+            AI 리포지토리
+          </a>
         </div>
       </div>
     </footer>
