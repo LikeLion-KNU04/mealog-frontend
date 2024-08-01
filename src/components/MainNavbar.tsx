@@ -4,20 +4,20 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { IconSearch, IconBell } from '@tabler/icons-react'
 import { usePathname } from 'next/navigation'
-import classNames from 'classnames'
 import { logo } from '@/assets'
+import clsx from 'clsx'
 
 export default function MainNavbar() {
   return (
     <div className="fixed border-b border-black/[7%] top-0 inset-x-0 h-16 bg-white z-[999]">
-      <div className="container px-24 mx-auto flex h-full justify-between items-center">
+      <div className="container px-36 mx-auto flex h-full justify-between items-center">
         <div className="flex h-full items-center gap-4">
-          <Link href="/main">
+          <Link href="/">
             <Image priority src={logo} alt="" height={32} />
           </Link>
 
           <div className="flex h-full pt-5 gap-6 px-2 text-[15px]">
-            <NavLink href="/" name="게시판" />
+            <NavLink exact href="/" name="게시판" />
             <NavLink href="/market" name="마켓" />
             <NavLink href="/analysis" name="내 식습관" />
           </div>
@@ -51,22 +51,23 @@ export default function MainNavbar() {
 interface NavLinkProps {
   href: string
   name: string
+  exact?: boolean
 }
 
-export function NavLink({ href, name }: NavLinkProps) {
+export function NavLink({ href, name, exact = false }: NavLinkProps) {
   const pathname = usePathname()
 
-  const isActive = pathname.startsWith(href)
+  const isActive = exact ? pathname === href : pathname.startsWith(href)
 
   return (
     <div
-      className={classNames(
+      className={clsx(
         isActive ? 'border-b-2 border-primary-600 font-bold' : 'font-medium'
       )}
     >
       <Link
         href={href}
-        className={classNames(
+        className={clsx(
           isActive
             ? 'text-primary-600'
             : 'hover:text-primary-600 transition-all duration-200'

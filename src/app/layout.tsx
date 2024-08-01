@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import NextTopLoader from 'nextjs-toploader'
 
 export const metadata: Metadata = {
   title: 'Mealog',
@@ -13,7 +14,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
-      <body>{children}</body>
+      <body>
+        <NextTopLoader color="#61967E" showSpinner={false} />
+        {children}
+      </body>
     </html>
   )
 }

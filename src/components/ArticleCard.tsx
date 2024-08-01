@@ -12,7 +12,7 @@ export default function ArticleCard({
   ...props
 }: ArticleCardProps) {
   return (
-    <div {...props} className="bg-white shadow rounded-xl">
+    <div {...props} className="bg-white shadow-2xl shadow-black/10 rounded-xl">
       <div className="flex items-center gap-2 px-3 py-3">
         <Image
           className="rounded-full"

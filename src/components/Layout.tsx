@@ -14,7 +14,7 @@ export default function Layout({ children }: LayoutProps) {
 
       <div className="h-16" />
 
-      <div className="container px-24 mx-auto py-6">{children}</div>
+      <div className="container px-36 mx-auto py-6">{children}</div>
 
       <Footer />
     </>
