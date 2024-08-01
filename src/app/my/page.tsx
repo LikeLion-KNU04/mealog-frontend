@@ -1,5 +1,6 @@
 'use client'
 
+import Button from '@/components/Button'
 import Layout from '@/components/Layout'
 import { TabGroup, TabList, Tab, TabPanels, TabPanel } from '@headlessui/react'
 import clsx from 'clsx'
@@ -10,8 +11,8 @@ export default function MyPage() {
   return (
     <Layout>
       <div className="px-12 py-12">
-        <div className="flex gap-8 pb-8">
-          <div className="w-2/3 flex gap-12 items-center">
+        <div className="flex justify-between gap-8 pb-8">
+          <div className="flex gap-12 items-center">
             <Image
               src="https://picsum.photos/500/500"
               alt="profile"
@@ -35,6 +36,11 @@ export default function MyPage() {
 
               <div className="text font-light pb-4">자기소개 문구입니다.</div>
             </div>
+          </div>
+          <div className="">
+            <Button variant="outlined" className="w-32 h-12">
+              프로필 수정
+            </Button>
           </div>
         </div>
 
