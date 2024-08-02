@@ -1,7 +1,7 @@
 'use client'
 
 import Button from '@/components/Button'
-import Layout from '@/components/Layout'
+import MainLayout from '@/components/MainLayout'
 import { TabGroup, TabList, Tab, TabPanels, TabPanel } from '@headlessui/react'
 import clsx from 'clsx'
 import Image from 'next/image'
@@ -9,7 +9,7 @@ import { Fragment } from 'react'
 
 export default function MyPage() {
   return (
-    <Layout>
+    <MainLayout>
       <div className="px-12 py-12">
         <div className="flex justify-between gap-8 pb-8">
           <div className="flex gap-12 items-center">
@@ -103,6 +103,6 @@ export default function MyPage() {
           </TabPanels>
         </TabGroup>
       </div>
-    </Layout>
+    </MainLayout>
   )
 }

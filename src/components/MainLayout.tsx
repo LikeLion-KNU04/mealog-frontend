@@ -7,14 +7,14 @@ interface LayoutProps {
   children: React.ReactNode
 }
 
-export default function Layout({ children }: LayoutProps) {
+export default function MainLayout({ children }: LayoutProps) {
   return (
     <>
       <MainNavbar />
 
       <div className="h-16" />
 
-      <div className="container px-36 mx-auto py-6">{children}</div>
+      {children}
 
       <Footer />
     </>

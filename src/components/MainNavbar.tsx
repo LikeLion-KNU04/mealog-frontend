@@ -17,7 +17,7 @@ export default function MainNavbar() {
           </Link>
 
           <div className="flex h-full pt-5 gap-6 px-2 text-[15px]">
-            <NavLink exact href="/" name="게시판" />
+            <NavLink href="/board" name="게시판" />
             <NavLink href="/market" name="마켓" />
             <NavLink href="/analysis" name="내 식습관" />
           </div>
