@@ -1,6 +1,31 @@
-import { bannerImg, logo, logoWhite } from '@/assets'
+'use client'
+
+import { bannerImg, logoWhite } from '@/assets'
 import MainLayout from '@/components/MainLayout'
+import { IconArrowRight, IconPlant } from '@tabler/icons-react'
 import Image from 'next/image'
+import Link from 'next/link'
+import { Line } from 'react-chartjs-2'
+import {
+  Chart,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend,
+} from 'chart.js'
+
+Chart.register(
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend
+)
 
 export default function MainPage() {
   return (
@@ -23,6 +48,110 @@ export default function MainPage() {
               </div>
               <Image src={logoWhite} alt="logo" width={120} />
             </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="container mx-auto px-36 py-16 flex gap-24">
+        <div className="w-1/5">
+          <Image
+            className="rounded-full"
+            src={`https://picsum.photos/200/200`}
+            alt="random"
+            width={120}
+            height={120}
+          />
+          <div className="text-2xl font-bold py-6">황부연</div>
+          <div className="flex flex-col gap-1">
+            <div className="flex justify-between gap-4">
+              <div className="text-gray-600">분석한 개수</div>
+              <div className="font-medium">2개</div>
+            </div>
+            <div className="flex justify-between gap-4">
+              <div className="text-gray-600">내 영양점수</div>
+              <div className="font-medium text-primary-600 flex items-center gap-2">
+                <IconPlant size={20} strokeWidth={1.25} />
+                <span>89.9</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="grow">
+          <div className="bg-zinc-100 flex gap-4 justify-between items-center rounded-xl px-6 py-5 mb-8">
+            <div>
+              <div className="text-xl font-bold pb-2">
+                오늘 음식 사진을 올리지 않았어요
+              </div>
+              <div className="text-sm text-zinc-500">
+                음식 사진을 올리고 영양 분석 및 식단 추천을 받아보세요!
+              </div>
+            </div>
+
+            <Link href="/analyze">
+              <button className="px-3 py-2 rounded-xl flex gap-2 items-center hover:bg-black/5 hover:shadow-lg hover:-translate-y-1 transition-all duration-200">
+                <span>분석하기</span>
+                <IconArrowRight size={20} strokeWidth={1.25} />
+              </button>
+            </Link>
+          </div>
+
+          <div className="text-2xl font-extrabold py-2">
+            황부연님의 영양섭취량
+          </div>
+
+          <div className="pb-8">
+            <Line
+              data={{
+                labels: [
+                  '07/26',
+                  '07/27',
+                  '07/28',
+                  '07/29',
+                  '07/30',
+                  '07/31',
+                  '08/01',
+                ],
+                datasets: [
+                  {
+                    label: '탄수화물',
+                    data: [122, 134, 147, 152, 169, 171, 184],
+                    fill: false,
+                    borderColor: 'rgb(54, 162, 235)',
+                  },
+                  {
+                    label: '단백질',
+                    data: [56, 71, 65, 43, 55, 89, 74],
+                    fill: false,
+                    borderColor: 'rgb(118, 192, 75)',
+                  },
+                  {
+                    label: '지방',
+                    data: [54, 75, 24, 65, 66, 85, 67],
+                    fill: false,
+                    borderColor: 'rgb(255, 99, 132)',
+                  },
+                ],
+              }}
+              options={{
+                plugins: {
+                  tooltip: {
+                    callbacks: {
+                      label: (item) =>
+                        `${item.dataset.label}: ${item.formattedValue}g`,
+                    },
+                  },
+                },
+                scales: {
+                  y: {
+                    beginAtZero: true,
+                  },
+                },
+              }}
+            />
+          </div>
+
+          <div className="text-2xl font-extrabold py-2">
+            황부연님을 위한 추천 식단
           </div>
         </div>
       </div>
