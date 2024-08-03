@@ -15,11 +15,13 @@
     "@tabler/icons-react": "^3.11.0",
     "chart.js": "^4.4.3",
     "clsx": "^2.1.1",
+    "framer-motion": "^11.3.21",
     "next": "14.2.5",
     "nextjs-toploader": "^1.6.12",
     "react": "^18",
     "react-chartjs-2": "^5.2.0",
     "react-dom": "^18",
+    "react-hook-form": "^7.52.1",
     "sharp": "^0.33.4"
   },
   "devDependencies": {

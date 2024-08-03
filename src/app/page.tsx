@@ -2,7 +2,15 @@
 
 import { bannerImg, logoWhite } from '@/assets'
 import MainLayout from '@/components/MainLayout'
-import { IconArrowRight, IconPlant } from '@tabler/icons-react'
+import {
+  IconArrowRight,
+  IconCell,
+  IconGrain,
+  IconLollipop,
+  IconMilk,
+  IconPizza,
+  IconPlant,
+} from '@tabler/icons-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Line } from 'react-chartjs-2'
@@ -95,11 +103,9 @@ export default function MainPage() {
             </Link>
           </div>
 
-          <div className="text-2xl font-extrabold py-2">
-            황부연님의 영양섭취량
-          </div>
+          <div className="text-2xl font-bold py-3">황부연님의 영양섭취량</div>
 
-          <div className="pb-8">
+          <div className="pb-12">
             <Line
               data={{
                 labels: [
@@ -150,8 +156,66 @@ export default function MainPage() {
             />
           </div>
 
-          <div className="text-2xl font-extrabold py-2">
-            황부연님을 위한 추천 식단
+          <div className="text-2xl font-bold py-3">
+            황부연님의 일평균 영양 현황
+          </div>
+
+          <div className="grid grid-cols-4 gap-4">
+            <div className="rounded-xl bg-gray-100 p-6">
+              <div className="text-xl font-bold pb-3 flex items-center gap-2">
+                <IconCell />
+                <span>탄수화물</span>
+              </div>
+              <div className="w-full bg-primary-200 my-1">
+                <div className="bg-primary-600 h-1 w-1/2"></div>
+              </div>
+              <div className="flex justify-between text-sm">
+                <span className="text-primary-600">72g</span>
+                <span className="text-gray-500">권장량 130g</span>
+              </div>
+            </div>
+
+            <div className="rounded-xl bg-gray-100 p-6">
+              <div className="text-xl font-bold pb-3 flex items-center gap-2">
+                <IconMilk />
+                <span>단백질</span>
+              </div>
+              <div className="w-full bg-primary-200 my-1">
+                <div className="bg-primary-600 h-1 w-1/2"></div>
+              </div>
+              <div className="flex justify-between text-sm">
+                <span className="text-primary-600">72g</span>
+                <span className="text-gray-500">권장량 130g</span>
+              </div>
+            </div>
+
+            <div className="rounded-xl bg-gray-100 p-6">
+              <div className="text-xl font-bold pb-3 flex items-center gap-2">
+                <IconMilk />
+                <span>당류</span>
+              </div>
+              <div className="w-full bg-primary-200 my-1">
+                <div className="bg-primary-600 h-1 w-1/2"></div>
+              </div>
+              <div className="flex justify-between text-sm">
+                <span className="text-primary-600">72g</span>
+                <span className="text-gray-500">권장량 130g</span>
+              </div>
+            </div>
+
+            <div className="rounded-xl bg-gray-100 p-6">
+              <div className="text-xl font-bold pb-3 flex items-center gap-2">
+                <IconPizza />
+                <span>지방</span>
+              </div>
+              <div className="w-full bg-primary-200 my-1">
+                <div className="bg-primary-600 h-1 w-1/2"></div>
+              </div>
+              <div className="flex justify-between text-sm">
+                <span className="text-primary-600">72g</span>
+                <span className="text-gray-500">권장량 130g</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
